@@ -1,0 +1,36 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/architecture.mk
+
+CMAKE_OPTS :=  -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+               -DQT_VERSION=5 \
+               -DQTGSTREAMER_STATIC=OFF \
+               -DQTGSTREAMER_TESTS=OFF \
+               -DQTGSTREAMER_EXAMPLES=OFF \
+               -DGST_PACKAGE_NAME="QtGStreamer (Debian)" \
+               -DGST_PACKAGE_ORIGIN="https://packages.qa.debian.org/qt-gstreamer" \
+               -DUSE_QT_PLUGIN_DIR=OFF
+
+override_dh_auto_configure:
+	dh_auto_configure -- $(CMAKE_OPTS)
+
+override_dh_auto_build-arch:
+	dh_auto_build --parallel -a -- all
+
+override_dh_auto_build-indep:
+	dh_auto_build --parallel -i -- doc
+
+override_dh_strip:
+	dh_strip --dbgsym-migration='qt5gstreamer-dbg (<< 1.2.0-5~)'
+
+override_dh_auto_install-arch:
+	dh_auto_install --parallel -a
+
+override_dh_auto_install-indep:
+	dh_auto_install --parallel -i
+	cp -r obj-$(DEB_HOST_GNU_TYPE)/doc debian/tmp/doc
+	find debian/tmp/doc/html \( -name '*.md5' -o -name '*.map' \) -delete
+	-rm debian/tmp/doc/html/jquery.js
+
+%:
+	dh $@ --parallel --with=pkgkde-symbolshelper

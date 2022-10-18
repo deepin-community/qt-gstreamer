@@ -1,0 +1,4 @@
+disable-doxygen-timestamp.patch
+find_gstconfig_properly.diff
+upstream_workaround_boost_ftbfs.diff
+Furter-workarounds-for-build-failures-now-boost-1.61-and-.patch

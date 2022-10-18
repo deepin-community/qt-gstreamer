@@ -1,0 +1,22 @@
+From: Diane Trout <diane@ghic.org>
+Date: Tue, 9 Aug 2016 12:46:30 +0200
+Subject: Turn off HTML_TIMESTAMP.
+
+This is needed to make qt-gstreamer build reproducably.
+---
+ Doxyfile.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Doxyfile.in b/Doxyfile.in
+index 309e494..69ed58f 100644
+--- a/Doxyfile.in
++++ b/Doxyfile.in
+@@ -812,7 +812,7 @@ HTML_STYLESHEET        =
+ # page will contain the date and time when the page was generated. Setting
+ # this to NO can help when comparing the output of multiple runs.
+ 
+-HTML_TIMESTAMP         = YES
++HTML_TIMESTAMP         = NO
+ 
+ # If the HTML_ALIGN_MEMBERS tag is set to YES, the members of classes,
+ # files or namespaces will be aligned in HTML using tables. If set to
