@@ -2,3 +2,6 @@ disable-doxygen-timestamp.patch
 find_gstconfig_properly.diff
 upstream_workaround_boost_ftbfs.diff
 Furter-workarounds-for-build-failures-now-boost-1.61-and-.patch
+gstreamer-1.16.patch
+qt-gstreamer-1.18.patch
+Drop-unnecessary-volatile-qualifier-from-g_once_init_ente.patch
