@@ -1,3 +1,22 @@
+qt-gstreamer (1.2.0-5.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+
+  [ Simon McVittie ]
+  * debian/patches: Fix arguments passed to __atomic_load (Closes: #997252)
+  * debian/control: Add missing dependencies on Glib/GStreamer -dev packages
+    (Closes: #906882)
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Wed, 28 Sep 2022 23:40:14 +0200
+
+qt-gstreamer (1.2.0-5.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Add patches to fix FTBFS (Closes: #941867)
+  * Update Vcs fields.
+
+ -- Ivo De Decker <ivodd@debian.org>  Mon, 22 Feb 2021 18:31:22 +0000
+
 qt-gstreamer (1.2.0-5) unstable; urgency=medium
 
   * Team upload.

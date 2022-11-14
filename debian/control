@@ -19,8 +19,8 @@ Build-Depends: cmake (>= 2.8.6),
                qtdeclarative5-dev
 Standards-Version: 4.1.2
 Homepage: https://gstreamer.freedesktop.org
-Vcs-Git: https://anonscm.debian.org/git/pkg-kde/kde-extras/qt-gstreamer.git
-Vcs-Browser: https://anonscm.debian.org/cgit/pkg-kde/kde-extras/qt-gstreamer.git
+Vcs-Git: https://salsa.debian.org/qt-kde-team/extras/qt-gstreamer.git
+Vcs-Browser: https://salsa.debian.org/qt-kde-team/extras/qt-gstreamer
 
 Package: qtgstreamer-doc
 Section: doc
@@ -127,6 +127,9 @@ Package: libqt5gstreamer-dev
 Section: libdevel
 Architecture: any
 Depends: libboost-dev (>= 1.39),
+         libglib2.0-dev,
+         libgstreamer-plugins-base1.0-dev (>= 1.1.90),
+         libgstreamer1.0-dev,
          libqt5glib-2.0-0 (= ${binary:Version}),
          libqt5gstreamer-1.0-0 (= ${binary:Version}),
          libqt5gstreamerquick-1.0-0 (= ${binary:Version}),
@@ -134,6 +137,7 @@ Depends: libboost-dev (>= 1.39),
          libqt5gstreamerutils-1.0-0 (= ${binary:Version}),
          qtbase5-dev,
          ${misc:Depends}
+Recommends: qtdeclarative5-dev
 Suggests: qtgstreamer-doc
 Description: Development headers for QtGStreamer - Qt 5 build
  QtGStreamer provides C++ bindings for GStreamer with a Qt-style API,
